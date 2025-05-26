@@ -1,3 +1,4 @@
+import 'package:currency_converter/pages/contact/contact.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatelessWidget {
@@ -53,15 +54,29 @@ class AboutUs extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(10),
               color: Colors.blue,
-              child:Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Text("First Tab Text or content will be here",style: TextStyle(color: Colors.white),),
-                   Icon(Icons.directions_car)
+                  Text(
+                    "First Tab Text or content will be here",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Icon(Icons.directions_car),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ContactUsScreen(),
+                        ),
+                      );
+                    },
+                    child: Text("Contact Us"),
+                  ),
                 ],
-              )
-              
-            // Icon(Icons.directions_car),
+              ),
+
+              // Icon(Icons.directions_car),
             ),
             Icon(Icons.directions_transit),
             Icon(Icons.directions_bike),
